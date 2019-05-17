@@ -7,5 +7,6 @@ $response = $client->request("GET", "https://anapioficeandfire.com/api/character
 
 $body = json_decode($response->getBody());
 $name = $body->name;
+$alias = $body->aliases[0];
 
-echo "Hello, ${name}!";
+echo "Hello, ${name}! Also known as ${alias}.";
